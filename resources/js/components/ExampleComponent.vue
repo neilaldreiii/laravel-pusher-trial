@@ -18,6 +18,11 @@
     export default {
         mounted() {
             console.log('Component mounted.')
+
+            fetch('/oauth/clients')
+            .then(response => {
+                console.log("response", response);
+            })
         }
     }
 </script>

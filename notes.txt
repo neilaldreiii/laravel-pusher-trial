@@ -3,3 +3,6 @@ php artisan migrate
 php artisan passport:install
 
 php artisan vendor:publish --tag=passport-components //passport vue components
+
+npm install
+npm run dev //recompile assets

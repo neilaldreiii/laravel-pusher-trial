@@ -5,6 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                <example-component></example-component>
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
@@ -14,7 +15,10 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <passport-clients></passport-clients>
+                    <passport-authorized-clients></passport-authorized-clients>
+                    <br>
+                    <passport-personal-access-tokens></passport-personal-access-tokens>
                 </div>
             </div>
         </div>
