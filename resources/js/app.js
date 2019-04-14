@@ -23,6 +23,16 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 Vue.component(
+    'chat-messages', 
+    require('./components/ChatMessages.vue').default
+);
+
+Vue.component(
+    'chat-form', 
+    require('./components/ChatForm.vue').default
+);
+
+Vue.component(
     'passport-clients',
     require('./components/passport/Clients.vue').default
 );
@@ -46,6 +56,32 @@ Vue.component(
 
 const app = new Vue({
 
-    el: '#app'
+    el: '#app',
+    data: {
+        messages: []
+    },
+    created() {
+        this.fetchMessages();
+    },
+    methods: {
+        fetchMessages() {
+            axios.get('/messages')
+            .then(response => {
+
+                this.messages = response.data;
+
+            });
+        },
+        addMessage(message) {
+            axios.messages.push(message);
+
+            axios.post('/messages', message)
+            .then(response => {
+
+                console.log(response.data);
+                
+            })
+        }
+    }
     
 });
