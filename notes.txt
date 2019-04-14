@@ -2,3 +2,4 @@ composer require laravel/passport
 php artisan migrate
 php artisan passport:install
 
+php artisan vendor:publish --tag=passport-components //passport vue components
