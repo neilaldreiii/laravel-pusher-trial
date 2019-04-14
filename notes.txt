@@ -6,3 +6,8 @@ php artisan vendor:publish --tag=passport-components //passport vue components
 
 npm install
 npm run dev //recompile assets
+
+//Pusher
+composer require pusher/pusher-php-server
+
+npm install --save laravel-echo pusher-js
