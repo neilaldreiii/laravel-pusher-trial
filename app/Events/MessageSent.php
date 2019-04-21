@@ -12,11 +12,13 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class MessageSent
+class MessageSent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $user, $message;
+    public $user;
+    
+    public $message;
 
     /**
      * Create a new event instance.
@@ -27,6 +29,11 @@ class MessageSent
     {
         $this->user = $user;
         $this->message = $message;
+    }
+
+    public function broadcastAs()
+    {
+        return 'MessageSent';
     }
 
     /**

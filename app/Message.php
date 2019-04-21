@@ -3,10 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Events\MessageSent;
 
 class Message extends Model
 {
-    protected $guarded = [];
+    protected $fillable = ['message'];
     
     public function user()
     {
